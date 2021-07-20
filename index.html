@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea cols="50" rows="10"></textarea>
+    <p id="demo"></p>
+    <button>Covert</button>
+    <script>
+      document.querySelector('button').addEventListener('click', () => {
+        let txt = document.querySelector('textarea').value.split('#');
+        const arr = [];
+        txt.forEach((e, index) => {
+          if (index !== 0) {
+            const replacedtxt = e.replace(new RegExp(' '), ',');
+            arr.push(replacedtxt);
+          }
+        });
+        var displayText = '';
+        arr.forEach((e) => {
+          displayText += e;
+        });
+        document.querySelector('#demo').innerText = displayText;
+      });
+    </script>
+  </body>
+</html>
